@@ -19,6 +19,7 @@ namespace Denuncias
             string pass = tb_pass.Text;
             //asadsad
             //asdaasdas
+            //dos
         }
     }
    
