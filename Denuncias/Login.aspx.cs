@@ -17,6 +17,8 @@ namespace Denuncias
         {
             string user = tb_user.Text;
             string pass = tb_pass.Text;
+            //asadsad
+            //asdaasdas
         }
     }
    
