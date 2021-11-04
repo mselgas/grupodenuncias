@@ -46,9 +46,9 @@ namespace Denuncias
             cargador.SelectCommand = comando;
             cargador.Fill(ds);
 
-            if (ds.Tables[0].Rows.Count > 0) 
+            if (ds.Tables[0].Rows.Count > 0)
             {
-                LBL_Error.InnerText = "Bienvenido "+ ds.Tables[0].Rows[0]["Apellido"].ToString();
+                LBL_Error.InnerText = "Bienvenido " + ds.Tables[0].Rows[0]["Apellido"].ToString();
             }
             else
             {
@@ -56,5 +56,5 @@ namespace Denuncias
             }
         }
     }
-   
+
 }
