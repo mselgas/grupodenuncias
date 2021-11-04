@@ -51,6 +51,7 @@
                         </div>
                         <!-- /.col -->
                     </div>
+                    
                 </form>
 
 
@@ -58,6 +59,9 @@
 
                 <p class="mb-0">
                     <a href="#" class="text-center">Registrarse</a>
+                </p>
+                <p class="mb-0">
+                   <label id="LBL_Error" runat="server"></label>
                 </p>
             </div>
             <!-- /.login-card-body -->
