@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Denuncias.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registrarse.aspx.cs" Inherits="Denuncias.Registrarse" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Denuncias | Log in</title>
+    <title>Denuncias | Registrarse</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -24,14 +24,39 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Regístrese para iniciar su sesión</p>
+                <p class="login-box-msg">Complete el formulario para registrarse</p>
 
                 <form runat="server">
+                    <div class="input-group mb-3">
+                        <asp:TextBox ID="tb_nombre" runat="server" class="form-control" placeholder="Nombre"></asp:TextBox>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <asp:TextBox ID="tb_apellido" runat="server" class="form-control" placeholder="Apellido"></asp:TextBox>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <asp:DropDownList ID="ddl_dependencia" runat="server"></asp:DropDownList>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="input-group mb-3">
                         <asp:TextBox ID="tb_user" runat="server" class="form-control" placeholder="Usuario"></asp:TextBox>
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
@@ -43,11 +68,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="input-group mb-3">
+                        <asp:TextBox ID="tb_pass2" type="password" runat="server" class="form-control" placeholder="Repita la Contraseña"></asp:TextBox>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-6"></div>
                         <!-- /.col -->
                         <div class="col-6">
-                            <asp:Button ID="btn_login" OnClick="Btn_login_click" runat="server" Text="Iniciar sesión" class="btn btn-primary btn-block" />
+                            <asp:Button ID="btn_enviar" OnClick="Btn_enviar_click" runat="server" Text="Enviar" class="btn btn-primary btn-block" />
                         </div>
                         <!-- /.col -->
                     </div>
@@ -58,7 +91,7 @@
 
 
                 <p class="mb-0">
-                    <a href="Registrarse.aspx" class="text-center">Registrarse</a>
+                    <a href="#" class="text-center">Registrarse</a>
                 </p>
                 <p class="mb-0">
                    <label id="LBL_Error" runat="server"></label>
