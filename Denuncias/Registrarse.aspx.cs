@@ -13,16 +13,15 @@ namespace Denuncias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "GetDependencia";
+            DataSet ds = conectar(comando);
+            ddl_dependencia.DataSource= ds;
+            ddl_dependencia.DataBind();
         }
-        protected void Btn_enviar_click(object sender, EventArgs e)
-        {
-            string user = tb_user.Text;
-            string pass = tb_pass.Text;
-            //asadsad
-            //asdaasdas
-            //dos
-            //tres
+        
+        private DataSet conectar(SqlCommand comando) {
             SqlConnectionStringBuilder cadenaConexion = new SqlConnectionStringBuilder();
             cadenaConexion.DataSource = "DESKTOP-RN897LR";
             cadenaConexion.InitialCatalog = "Denuncias";
@@ -34,18 +33,35 @@ namespace Denuncias
             conn.ConnectionString = cadenaConexion.ConnectionString;
             conn.Open();
 
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "GetUsuario";
-            comando.Parameters.AddWithValue("@usuario", user);
-            comando.Parameters.AddWithValue("@clave", pass);
+            
             comando.Connection = conn;
 
             DataSet ds = new DataSet();
             SqlDataAdapter cargador = new SqlDataAdapter();
             cargador.SelectCommand = comando;
             cargador.Fill(ds);
+            return ds;
+        }
+        protected void Btn_enviar_click(object sender, EventArgs e)
+        {
+            string nombre = tb_nombre.Text;
+            string apellido = tb_apellido.Text;
+            int dependencia = 1;
+            string user = tb_user.Text;
+            string pass = tb_pass.Text;
 
+            
+
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "SaveUsuario";
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@apellido", apellido);
+            comando.Parameters.AddWithValue("@dependencia", dependencia);
+            comando.Parameters.AddWithValue("@usuario", user);
+            comando.Parameters.AddWithValue("@clave", pass);
+         
+            DataSet ds = conectar(comando);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 LBL_Error.InnerText = "Bienvenido " + ds.Tables[0].Rows[0]["Apellido"].ToString();

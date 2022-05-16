@@ -47,8 +47,10 @@ namespace Denuncias
             cargador.Fill(ds);
 
             if (ds.Tables[0].Rows.Count > 0)
-            {
-                LBL_Error.InnerText = "Bienvenido " + ds.Tables[0].Rows[0]["Apellido"].ToString();
+            {//agrego el usuario a la session
+                Session.Add("usuario",ds);
+                Response.Redirect("Inicio.aspx");
+                //LBL_Error.InnerText = "Bienvenido " + ds.Tables[0].Rows[0]["Apellido"].ToString();
             }
             else
             {

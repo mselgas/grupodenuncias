@@ -118,6 +118,15 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="plugins\jquery\jquery.js" />
+    <Content Include="plugins\jquery\jquery.min.js" />
+    <Content Include="plugins\jquery\jquery.slim.js" />
+    <Content Include="plugins\jquery\jquery.slim.min.js" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="plugins\fontawesome-free\css\all.css" />
@@ -140,6 +149,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
     <Compile Include="Registrarse.aspx.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,13 +178,6 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="dist\css\adminlte.css.map" />
@@ -180,7 +196,6 @@
     <Content Include="dist\js\adminlte.js.map" />
     <Content Include="dist\js\adminlte.min.js.map" />
     <None Include="packages.config" />
-    <Content Include="Site.Master" />
     <Content Include="plugins\fontawesome-free\webfonts\fa-brands-400.eot" />
     <Content Include="plugins\fontawesome-free\webfonts\fa-brands-400.ttf" />
     <Content Include="plugins\fontawesome-free\webfonts\fa-brands-400.woff" />
@@ -193,6 +208,13 @@
     <Content Include="plugins\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="plugins\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="Page.Master" />
+    <Content Include="plugins\jquery\jquery.min.map" />
+    <Content Include="plugins\jquery\jquery.slim.min.map" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Include="plugins\bootstrap\js\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
