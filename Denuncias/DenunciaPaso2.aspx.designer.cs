@@ -11,35 +11,26 @@ namespace Denuncias
 {
 
 
-    public partial class NuevaDenuncia
+    public partial class DenunciaPaso2
     {
 
         /// <summary>
-        /// Control TB_fecha.
+        /// Control TB_calle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_fecha;
+        protected global::System.Web.UI.WebControls.TextBox TB_calle;
 
         /// <summary>
-        /// Control TB_caratula.
+        /// Control TB_altura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_caratula;
-
-        /// <summary>
-        /// Control TB_observacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_observacion;
+        protected global::System.Web.UI.WebControls.TextBox TB_altura;
 
         /// <summary>
         /// Control TB_extracto.
@@ -49,6 +40,15 @@ namespace Denuncias
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TB_extracto;
+
+        /// <summary>
+        /// Control TextBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
         /// Control lbl_error.

@@ -118,6 +118,7 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="DenunciaPaso2.aspx" />
     <Content Include="NuevaDenuncia.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.js" />
@@ -150,6 +151,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DenunciaPaso2.aspx.cs">
+      <DependentUpon>DenunciaPaso2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DenunciaPaso2.aspx.designer.cs">
+      <DependentUpon>DenunciaPaso2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NuevaDenuncia.aspx.cs">
       <DependentUpon>NuevaDenuncia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
