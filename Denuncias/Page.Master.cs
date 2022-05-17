@@ -21,5 +21,11 @@ namespace Denuncias
                 Response.Redirect("Login.aspx");
             }
         }
+
+        protected void CerrarSession_Click(object sender, EventArgs e)
+        {
+            Session.Add("usuario", null);
+            Response.Redirect("Login.aspx");
+        }
     }
 }
