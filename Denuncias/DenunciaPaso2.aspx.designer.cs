@@ -33,22 +33,49 @@ namespace Denuncias
         protected global::System.Web.UI.WebControls.TextBox TB_altura;
 
         /// <summary>
-        /// Control TB_extracto.
+        /// Control TB_depto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB_extracto;
+        protected global::System.Web.UI.WebControls.TextBox TB_depto;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control TB_entreCalles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TB_entreCalles;
+
+        /// <summary>
+        /// Control ddl_partido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_partido;
+
+        /// <summary>
+        /// Control up.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up;
+
+        /// <summary>
+        /// Control ddl_localidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_localidad;
 
         /// <summary>
         /// Control lbl_error.

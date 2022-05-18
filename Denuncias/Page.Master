@@ -17,7 +17,11 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <form id="form1" runat="server">
-
+        <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release">
+            <Scripts>
+               
+            </Scripts>
+        </asp:ScriptManager>
 
         <div class="wrapper">
             <!-- Navbar -->
@@ -27,20 +31,20 @@
                     <li class="nav-item">
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                     </li>
-                    
+
                 </ul>
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <asp:Button ID="CerrarSession" OnClick="CerrarSession_Click" class="btn btn-default"  runat="server" Text="Cerrar Sesion" />
+                        <asp:Button ID="CerrarSession" OnClick="CerrarSession_Click" class="btn btn-default" runat="server" Text="Cerrar Sesion" />
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                             <i class="fas fa-expand-arrows-alt"></i>
                         </a>
                     </li>
-                    
+                   
                 </ul>
             </nav>
             <!-- /.navbar -->
@@ -69,11 +73,11 @@
                with font-awesome or any other icon font library -->
 
 
-                            
+
                             <li class="nav-header">Proyecto Final - Denuncias</li>
                             <li class="nav-item">
                                 <a href="Inicio.aspx" class="nav-link">
-                                  
+
                                     <p>
                                         Inicio
                
@@ -83,7 +87,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="NuevaDenuncia.aspx" class="nav-link">
-                                
+
                                     <p>
                                         Nueva Denuncia
                
@@ -91,9 +95,19 @@
                                     </p>
                                 </a>
                             </li>
-                           
-                           
-                           
+                            <li class="nav-item">
+                                <a href="Busqueda.aspx" class="nav-link">
+
+                                    <p>
+                                        Busqueda
+               
+                                        <span class="badge badge-info right"></span>
+                                    </p>
+                                </a>
+                            </li>
+
+
+
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->
@@ -132,7 +146,7 @@
                     <b>Version</b> 1.0
    
                 </div>
-                <strong>Copyright &copy; </strong> Proyecto Final - Sistema Denuncias.
+                <strong>Copyright &copy; </strong>Proyecto Final - Sistema Denuncias.
  
             </footer>
 

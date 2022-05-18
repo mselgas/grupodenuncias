@@ -94,6 +94,7 @@
     <Content Include="dist\img\credit\paypal2.png" />
     <Content Include="dist\img\credit\visa.png" />
     <Content Include="dist\img\default-150x150.png" />
+    <Content Include="dist\img\delete.png" />
     <Content Include="dist\img\icons.png" />
     <Content Include="dist\img\photo1.png" />
     <Content Include="dist\img\photo2.png" />
@@ -119,6 +120,7 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
     <Content Include="DenunciaPaso2.aspx" />
+    <Content Include="Busqueda.aspx" />
     <Content Include="NuevaDenuncia.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.js" />
@@ -157,6 +159,13 @@
     </Compile>
     <Compile Include="DenunciaPaso2.aspx.designer.cs">
       <DependentUpon>DenunciaPaso2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda.aspx.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busqueda.aspx.designer.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
     </Compile>
     <Compile Include="NuevaDenuncia.aspx.cs">
       <DependentUpon>NuevaDenuncia.aspx</DependentUpon>

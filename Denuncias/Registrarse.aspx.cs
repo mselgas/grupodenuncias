@@ -17,10 +17,22 @@ namespace Denuncias
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "GetDependencia";
             DataSet ds = conectar(comando);
-            ddl_dependencia.DataSource= ds;
-            ddl_dependencia.DataBind();
+            
+            Fill(ddl_dependencia,ds,"Id","Descripcion",0,true);
+            
         }
-        
+
+        private void Fill(ListControl listControl, DataSet ds, string valueMember, string displayMember, int table, bool mostrarSeleccione)
+        {
+            listControl.DataSource = ds.Tables[table].DefaultView;
+            listControl.DataTextField = displayMember;
+            listControl.DataValueField = valueMember;
+            listControl.DataBind();
+            if (mostrarSeleccione.Equals(true))
+            {
+                listControl.Items.Insert(0, new ListItem("Seleccione..", "-1"));
+            }
+        }
         private DataSet conectar(SqlCommand comando) {
             SqlConnectionStringBuilder cadenaConexion = new SqlConnectionStringBuilder();
             cadenaConexion.DataSource = "DESKTOP-RN897LR";
@@ -44,32 +56,7 @@ namespace Denuncias
         }
         protected void Btn_enviar_click(object sender, EventArgs e)
         {
-            string nombre = tb_nombre.Text;
-            string apellido = tb_apellido.Text;
-            int dependencia = 1;
-            string user = tb_user.Text;
-            string pass = tb_pass.Text;
-
-            
-
-            SqlCommand comando = new SqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SaveUsuario";
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@apellido", apellido);
-            comando.Parameters.AddWithValue("@dependencia", dependencia);
-            comando.Parameters.AddWithValue("@usuario", user);
-            comando.Parameters.AddWithValue("@clave", pass);
-         
-            DataSet ds = conectar(comando);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                LBL_Error.InnerText = "Bienvenido " + ds.Tables[0].Rows[0]["Apellido"].ToString();
-            }
-            else
-            {
-                LBL_Error.InnerText = "No exite el usuario";
-            }
+            Response.Redirect("Login.aspx");
         }
     }
 

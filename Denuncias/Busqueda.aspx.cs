@@ -9,17 +9,19 @@ using System.Web.UI.WebControls;
 
 namespace Denuncias
 {
-    public partial class DenunciaPaso2 : System.Web.UI.Page
+    public partial class Busqueda : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            actualizarGrilla();
+        }
+        private void actualizarGrilla() {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "GetPartidoByIdProvincia";
-            comando.Parameters.AddWithValue("@idProvincia", 1);
+            comando.CommandText = "GetDenuncias";
             DataSet ds = conectar(comando);
-
-            Fill(ddl_partido, ds, "Id", "Descripcion", 0, true);
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
         }
         private void Fill(ListControl listControl, DataSet ds, string valueMember, string displayMember, int table, bool mostrarSeleccione)
         {
@@ -55,15 +57,46 @@ namespace Denuncias
             return ds;
         }
 
-        protected void ddl_partido_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btn_buscar_Click(object sender, EventArgs e)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "GetLocalidadByIdPartido";
-            comando.Parameters.AddWithValue("@idPartido", 1);
+            comando.CommandText = "GetDenuncias";
             DataSet ds = conectar(comando);
 
-            Fill(ddl_localidad, ds, "Id", "Descripcion", 0, true);
+            if (TB_caratula.Text != "")
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    if (ds.Tables[0].Rows[i]["Caratula"].ToString() != TB_caratula.Text)
+                    {
+                        ds.Tables[0].Rows[i].Delete();
+                    }
+                }
+                ds.AcceptChanges();
+            }
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+        }
+
+        protected void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            actualizarGrilla();
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                int id = int.Parse(e.CommandArgument.ToString());
+                SqlCommand comando = new SqlCommand();
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "DeleteDenuncia";
+                comando.Parameters.AddWithValue("@id", id);
+                conectar(comando);
+                actualizarGrilla();
+
+            }
         }
     }
 }

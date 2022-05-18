@@ -44,7 +44,8 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <asp:DropDownList ID="ddl_dependencia" runat="server"></asp:DropDownList>
+                        <label>Dependencia &nbsp;</label>
+                        <asp:DropDownList ID="ddl_dependencia" runat="server" Width="50%"></asp:DropDownList>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
